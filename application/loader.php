@@ -7,6 +7,4 @@ require APPPATH . 'config/routes.php';
 
 
 //load core of ExtPHP
-require SYSPATH . 'cores/ExtPhp.php'; 
-
-
+require SYSPATH . 'cores/ExtPhp.php';
