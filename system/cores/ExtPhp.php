@@ -2,31 +2,24 @@
 
 /**Generate Router **/
 
-$router = new Router; 
-
 $dispatcher = new Dispatcher; 
-$dispatcher->setSuffix(''); 
-$dispatcher->setClassPath(APPPATH . '/controller'); 
+$dispatcher->setSuffix(strtolower(CONTROLLER_NAMESPACE)); 
+$dispatcher->setClassPath(APPPATH . '/controllers'); 
 
-$std_route = new Route('/:class/:method/:id');
-$std_route->addDynamicElement(':class', ':class')
-          ->addDynamicElement(':method', ':method')
-          ->addDynamicElement(':id', ':id');
+$router->default_routes();
+$router->execute();
 
-$router->addRoute( 'std', $std_route );
-
-//Set up your default route:
-$default_route = new Route('/');
-$default_route->setMapClass('default')->setMapMethod('index');
-$router->addRoute( 'default', $default_route);
-
-$url = urldecode($_SERVER['REQUEST_URI']);
-$url = str_replace($base_path,'',$url); 
-
-$found_route = $router->findRoute($url); 
-
-echo $found_route->getMapClass() . '<br>'; 
-echo $found_route->getMapMethod(). '<br>'; 
-print_r($found_route->getMapArguments()); 
+if ($router->route_found){  
+  try{    
+    $dispatcher->dispatch($router);     
+  }catch(Exception $e){
+    echo $e->getMessage();
+    die();
+  }
+  
+}else{
+  echo "<b>Route Url not Found </b> ". $_SERVER['REQUEST_URI']; 
+  die();
+}
 
 /**End of Router **/ 

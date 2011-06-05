@@ -7,10 +7,11 @@ if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50300)
 error_reporting(E_ALL | E_STRICT);
 
 
-$application = 'application'; 
+$application = 'app'; 
 $system = 'system'; 
 
 define('EXT','.php'); 
+define('CONTROLLER_NAMESPACE','_Controller'); 
 
 // Set the full path to the docroot
 define('DOCROOT', realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR);

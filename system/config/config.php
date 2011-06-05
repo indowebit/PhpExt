@@ -1,15 +1,18 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 $system_classses = array(
-                       'class.controller.php'
+                       'class.controller.php',
+                       'class.helper.php'
                     ); 
                     
-$helper_function = array(
+$helper_sys_function = array(
+                      'application'
                     ); 
                     
 $library_classes = array(
-                      'robab-php-router/Router.php',
-                      'robab-php-router/Route.php',
-                      'robab-php-router/Dispatcher.php',
+                      'router/Router.php',
+                      'router/Dispatcher.php',
                       'php-activerecord/ActiveRecord.php'
                     );
+
+                    

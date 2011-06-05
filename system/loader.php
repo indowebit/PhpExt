@@ -10,17 +10,9 @@ foreach ($system_classses as $file){
   }
 }
 
-//load helper from classes directories
-foreach ($helper_function as $file){
-  $file = SYSPATH .'helper/'. $file; 
-  if (file_exists($file)){
-    require $file; 
-  }
-}
-
 //load library from classes directories
 foreach ($library_classes as $file){
-  $file = SYSPATH .'library/'. $file; 
+  $file = SYSPATH .'libraries/'. $file; 
   if (file_exists($file)){
     require $file; 
   }
