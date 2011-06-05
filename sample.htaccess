@@ -1,6 +1,6 @@
 
 RewriteEngine On
-RewriteBase /ext-php-beta/
+RewriteBase /phpext/
 RewriteRule ^(?:app|system|config)\b.* index.php/$0 [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

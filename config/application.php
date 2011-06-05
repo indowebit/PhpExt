@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-$base_path = '/ext-php-beta'; 
+$base_path = '/phpext'; 
 $index_file = 'index.php'; 
 
 
