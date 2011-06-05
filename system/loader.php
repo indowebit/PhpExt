@@ -14,7 +14,7 @@ foreach ($system_classses as $file){
 foreach ($library_classes as $file){
   $file = SYSPATH .'libraries/'. $file; 
   if (file_exists($file)){
-    require $file; 
+    require_once $file; 
   }
 }
 

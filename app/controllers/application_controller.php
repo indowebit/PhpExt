@@ -4,5 +4,6 @@ class Application_Controller extends Controller {
   
   
   protected function login_required(){
+    
   }
 }

@@ -66,7 +66,7 @@ class Dispatcher
         //At this point, we are relatively assured that the file name is safe
         // to check for it's existence and require in.
         if( FALSE === file_exists($file_name) )
-            throw new classFileNotFoundException('Class file not found');
+            throw new classFileNotFoundException('Class file not found ' .$class);
         //else //use autoloading not needed anymore
             //require_once($file_name);
 

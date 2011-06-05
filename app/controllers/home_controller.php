@@ -11,7 +11,12 @@ class Home_Controller extends Application_Controller {
   }
   
   public function view(){
-   print_r($this->params);
+   $users = User::find('all');
+   foreach($users as $user){
+     echo $user->id;
+     echo $user->name;
+   }
+   
   }
   
   public function js(){
